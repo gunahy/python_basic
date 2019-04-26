@@ -22,9 +22,34 @@ fibonacci(400, 505)
 
 
 def sort_to_max(origin_list):
-    pass
+    ### Сортирует список origin_list по алгоритму Хоара ###
+    if len(origin_list) <= 1:
+        return
+    left_list = []
+    middle_list = []
+    right_list = []
 
-sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
+    zero = origin_list[0]
+
+    for item in origin_list:
+        if item < zero:
+            left_list.append(item)
+        elif item == zero:
+            middle_list.append(item)
+        else:
+            right_list.append(item)
+
+    sort_to_max(left_list)
+    sort_to_max(right_list)
+
+    i = 0
+    for item in left_list + middle_list + right_list:
+        origin_list[i] = item
+        i += 1
+
+
+ sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
+
 
 # Задача-3:
 # Напишите собственную реализацию стандартной функции filter.
