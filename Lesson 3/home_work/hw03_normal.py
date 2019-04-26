@@ -12,9 +12,6 @@ def fibonacci(n, m):
 fibonacci(400, 505)
 
 
-
-
-
 # Задача-2:
 # Напишите функцию, сортирующую принимаемый список по возрастанию.
 # Для сортировки используйте любой алгоритм (например пузырьковый).
@@ -55,10 +52,29 @@ sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
 # Напишите собственную реализацию стандартной функции filter.
 # Разумеется, внутри нельзя использовать саму функцию filter.
 
+def my_filter(func, lst):
+    ### Фильрует последовательность lst по функции func ###
+    buffer = []
+    for item in lst:
+        if func(item):
+            buffer.append(item)
+    return iter(buffer)
+lst_num = [2, -500, 9, 17]
+lst_str = ["One", "Two", "None", "24"]
+
+def is_positive(num):
+    return num > 0
+
+def has_o(str):
+    return 'o' in str.lower()
+
+print(list(my_filter(is_positive, lst_num)))
+print(list(my_filter(has_o, lst_str)))
 
 # Задача-4:
 # Даны четыре точки А1(х1, у1), А2(x2 ,у2), А3(x3 , у3), А4(х4, у4).
 # Определить, будут ли они вершинами параллелограмма.
+
 import math
 def is_parallelogram(A1, A2, A3, A4):
     ### Проверка лежат ли точки A1, A2, A3, A4 на вершинах параллелограмма ###
@@ -72,7 +88,7 @@ def is_parallelogram(A1, A2, A3, A4):
     else:
         return False
 
-print(is_parallelogram([1,1],[3,4],[1,2],[3,2]))
+print(is_parallelogram([1,1],[3,1],[1,2],[3,2]))
 
 
 
