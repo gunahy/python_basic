@@ -48,7 +48,7 @@ def sort_to_max(origin_list):
         i += 1
 
 
- sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
+sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
 
 
 # Задача-3:
@@ -59,4 +59,21 @@ def sort_to_max(origin_list):
 # Задача-4:
 # Даны четыре точки А1(х1, у1), А2(x2 ,у2), А3(x3 , у3), А4(х4, у4).
 # Определить, будут ли они вершинами параллелограмма.
+import math
+def is_parallelogram(A1, A2, A3, A4):
+    ### Проверка лежат ли точки A1, A2, A3, A4 на вершинах параллелограмма ###
+    d1 = math.hypot(A2[0] - A1[0],A2[1] - A1[1])
+    d2 = math.hypot(A3[0] - A2[0],A3[1] - A2[1])
+    d3 = math.hypot(A4[0] - A3[0],A4[1] - A3[1])
+    d4 = math.hypot(A1[0] - A4[0],A1[1] - A4[1])
+
+    if d1 == d3 and d2 == d4:
+        return True
+    else:
+        return False
+
+print(is_parallelogram([1,1],[3,4],[1,2],[3,2]))
+
+
+
 
