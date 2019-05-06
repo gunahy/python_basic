@@ -3,7 +3,11 @@
 # Первыми элементами ряда считать цифры 1 1
 
 def fibonacci(n, m):
-    ### Возвращает последовательность ряда Фибоначи от n до m ###
+    """ Возвращает последовательность ряда Фибоначи от n до m
+    :param n:
+    :param m:
+    :return:
+    """
     fib_part = [1, 1]
     for a in range(2, m):
         fib_part.append(fib_part[a - 1] + fib_part[a - 2])
