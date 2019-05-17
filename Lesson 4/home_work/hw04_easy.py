@@ -5,30 +5,24 @@
 # Получить новый список, элементы которого будут
 # квадратами элементов исходного списка
 # [1, 2, 4, 0] --> [1, 4, 16, 0]
-
-print([a ** 2 for a in [1, 2, 4, 0]])
+import random
+list1 = [random.randint(0, 10) for _ in range(1, 10)]
+print([a ** 2 for a in list1])
 # Задание-2:
 # Даны два списка фруктов.
 # Получить список фруктов, присутствующих в обоих исходных списках.
+fruits1 = ["банан", "апельсин", "яблоко", "груша", "киви"]
+fruits2 = ["манго", "ананас", "апельсин", "киви", "фейхуа"]
+result = [a for a in fruits1 if a in fruits2]
+print(result)
 
-fruits1 = ["яблоко", "груша", "персик", "банан"]
-fruits2 = ["груша", "манго", "ананас", "банан"]
-
-merge_list = [a for a in list((filter(lambda x: x in fruits1, fruits2)))]
-print(merge_list)
 # Задание-3:
 # Дан список, заполненный произвольными числами.
 # Получить список из элементов исходного, удовлетворяющих следующим условиям:
 # + Элемент кратен 3
 # + Элемент положительный
 # + Элемент не кратен 4
-
-import random
-sample_list1 = [random.randint(-100, 100) for _ in range(10)]
-print(sample_list1)
-list_m3 = [a for a in sample_list1 if a % 3 == 0]
-list_positive = [p for p in sample_list1 if p >= 0]
-list_m4 = [f for f in sample_list1 if f % 4 == 0]
-
-print(list_m3, list_positive, list_m4, sep="\n")
-
+list2 = [random.randint(-100, 100) for _ in range(0, 10)]
+result2 = [a for a in list2 if a % 3 == 0 and a > 0 and a % 4 != 0]
+print(list2)
+print(result2)
